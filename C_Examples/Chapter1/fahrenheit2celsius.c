@@ -1,20 +1,15 @@
 #include <stdio.h>
 
-/* print Fahrenheit-Celsius table
-	  for fahr = 0, 20, ..., 300 */
-int main() {
-	  int fahr, celsius;
-	  int lower, upper, step;
-	
-	  lower = 0;	/* lower limit of temperature table */
-	  upper = 300;	/* upper limit */
-	  step = 20;	/* step size */
+float convert(float fahr){
+  float celsius;
+  celsius = 5 * (fahr-32)/9; //Executes the conversion with the user input
+  return celsius; //Returns the calculation to the main method's printf
+}
 
-	  fahr = lower;
-	  while (fahr <= upper) {
-		  celsius = 5 * (fahr-32) / 9;
-		  printf("%d\t%d\n", fahr, celsius);
-		  fahr = fahr + step;
-	  }
-	  return(0);
+int main() { 
+  float fahr, celsius;
+  scanf("%f", &fahr); //Asks for user input of Fahrenheight
+  printf("Celsius:");
+  printf("%f", convert(fahr));//Calls the conversion method and inputs the user's answer
+  return(0);
 }
