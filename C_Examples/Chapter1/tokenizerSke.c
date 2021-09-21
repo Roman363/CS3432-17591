@@ -75,6 +75,7 @@ char *copy_str(char *inStr, short len){
   return copy;
 }
 
+/*Returns a freshly allocated zero-terminated vector */
 char** tokenize(char* str){
   char words = count_tokens(str)+1;
   char **arr = (char **)malloc(sizeof(char *) * (words+1));
